@@ -22,7 +22,10 @@ server.get("/tweets", (require, response) => {
 
 server.post("/tweets", (require, response) => {
     const tweet = require.body;
-    allTweets.push(users.avatar, tweet);
+    const getUserImage = users.find(profile => profile.username === tweet.username);
+    const newTweet = { ...tweet, avatar: getUserImage.avatar };
+
+    allTweets.push(newTweet);
     response.send("OK");
 });
 
