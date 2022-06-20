@@ -20,6 +20,10 @@ server.get("/tweets", (require, response) => {
     response.send(lastTweets);
 });
 
-
+server.post("/tweets", (require, response) => {
+    const tweet = require.body;
+    allTweets.push(users.avatar, tweet);
+    response.send("OK");
+});
 
 server.listen(5000);
