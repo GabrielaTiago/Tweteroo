@@ -15,7 +15,11 @@ server.post("/sign-up", (require, response) => {
 });
 
 server.get("/tweets", (require, response) => {
-    response.send(allTweets);
+    const NUMBER_OF_TWEETS = 10;
+    const lastTweets = allTweets.slice(-NUMBER_OF_TWEETS).reverse();
+    response.send(lastTweets);
 });
+
+
 
 server.listen(5000);
