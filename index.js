@@ -10,8 +10,14 @@ const allTweets = [];
 
 server.post("/sign-up", (require, response) => {
     const user = require.body;
-    users.push(user);
-    response.send("OK");
+
+    if (user.username !== "" && user.avatar !== "") {
+        users.push(user);
+        response.send("OK");
+    }
+    else{
+        response.sendStatus(400).send("Todos os campos são obrigatórios!");
+    }
 });
 
 server.get("/tweets", (require, response) => {
