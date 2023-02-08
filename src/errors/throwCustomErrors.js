@@ -11,7 +11,7 @@ function throwCustomError(type, error_message) {
   if (!ERRORS[type]) {
     throw new Error(`Invalid error type: ${type}`);
   }
-  throw new Error({ type, error_message: error_message || ERRORS[type] });
+  throw{ type, error_message: error_message || ERRORS[type] };
 }
 
 export { throwCustomError };
