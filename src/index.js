@@ -2,12 +2,15 @@ import express, { json } from "express";
 import cors from "cors";
 import chalk from "chalk";
 import dotenv from "dotenv";
+import { errorHandler } from "./middlewares/errorHandler.js";
+
 
 dotenv.config();
 
 const server = express();
 
 server.use(cors(), json());
+server.use(errorHandler);
 
 const users = [];
 const allTweets = [];
