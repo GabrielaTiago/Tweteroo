@@ -8,4 +8,10 @@ function createTweet(req, res) {
   res.status(201).send("OK");
 }
 
-export { createTweet };
+function getTweets(_req, res) {
+  const tweets = tweetService.getTweets();
+
+  res.status(200).send(tweets);
+}
+
+export { createTweet, getTweets };
