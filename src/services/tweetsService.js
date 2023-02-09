@@ -9,17 +9,17 @@ function getUserImage(username) {
 function createTweet(username, tweet) {
   const MAXIMUM_TWEET_SIZE = 140;
   const tweetSize = tweet.length;
-  const avatar = getUserImage(username);
+  const { avatar } = getUserImage(username);
 
   if (!avatar) {
-    throwCustomError(
+    throw throwCustomError(
       "notFound",
       "Something went wrong when fetching your user image"
     );
   }
 
   if (tweetSize > MAXIMUM_TWEET_SIZE) {
-    throwCustomError(
+    throw throwCustomError(
       "forbidden",
       "The tweet size is longer than the allowed 140 characters"
     );
@@ -28,4 +28,15 @@ function createTweet(username, tweet) {
   allTweets.push({ username, tweet, avatar });
 }
 
-export { createTweet };
+function getTweets() {
+  const MAX_TWEETS_PER_PAGE = 10;
+  const tweets = allTweets;
+
+  if (tweets <= MAX_TWEETS_PER_PAGE) {
+    return [...tweets].reverse();
+  } else {
+    return [...tweets].reverse().splice(0, MAX_TWEETS_PER_PAGE);
+  }
+}
+
+export { createTweet, getTweets };
