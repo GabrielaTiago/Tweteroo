@@ -1,7 +1,9 @@
 import * as tweetService from "../services/tweetsService.js";
 
 function createTweet(req, res) {
-  const { username, tweet } = req.body;
+  const { tweet } = req.body;
+  console.log(req.headers);
+  const { user: username } = req.headers;
 
   tweetService.createTweet(username, tweet);
 
