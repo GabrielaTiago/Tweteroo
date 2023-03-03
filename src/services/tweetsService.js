@@ -38,8 +38,16 @@ function getTweets(page) {
     const start = (page - 1) * MAX_TWEETS_PER_PAGE;
     const end = page * MAX_TWEETS_PER_PAGE;
 
-    return [... tweets].reverse().splice(start, end);
+    return [...tweets].reverse().splice(start, end);
   }
 }
 
-export { createTweet, getTweets };
+function getTweetsByUsername(username) {
+  const tweets = allTweets;
+
+  const userTweets = tweets.filter((tweet) => tweet.username === username);
+
+  return [...userTweets].reverse();
+}
+
+export { createTweet, getTweets, getTweetsByUsername };
