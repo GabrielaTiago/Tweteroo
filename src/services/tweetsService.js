@@ -28,14 +28,17 @@ function createTweet(username, tweet) {
   allTweets.push({ username, tweet, avatar });
 }
 
-function getTweets() {
+function getTweets(page) {
   const MAX_TWEETS_PER_PAGE = 10;
   const tweets = allTweets;
 
   if (tweets <= MAX_TWEETS_PER_PAGE) {
     return [...tweets].reverse();
   } else {
-    return [...tweets].reverse().splice(0, MAX_TWEETS_PER_PAGE);
+    const start = (page - 1) * MAX_TWEETS_PER_PAGE;
+    const end = page * MAX_TWEETS_PER_PAGE;
+
+    return [... tweets].reverse().splice(start, end);
   }
 }
 

@@ -10,8 +10,9 @@ function createTweet(req, res) {
   res.status(201).send("OK");
 }
 
-function getTweets(_req, res) {
-  const tweets = tweetService.getTweets();
+function getTweets(req, res) {
+  const { page } = req.query;
+  const tweets = tweetService.getTweets(page);
 
   res.status(200).send(tweets);
 }
