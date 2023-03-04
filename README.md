@@ -22,20 +22,19 @@ A API Fornece rotas de login de usuários, visualização de todos os tweets com
 
 ### :world_map: Rotas
 
+##### [POST] /sign-up
+
 ```yml
-[POST]  /sign-up
+- Rota para login de um novo usário
+- Inputs são obrigatórios
+- username: string,
+- avatar: string
 
-    - Rota para login de um novo usário
-    - Inputs são obrigatórios
-    - username: string,
-    - avatar: string
-
-    - body:
-        {
-            "username": "Adele",
-            "avatar": "https://i.pinimg.com/736x/13/b2/18/13b218257756135657857ce8f43daa58.jpg"
-
-        }
+- body:
+    {
+      "username": "Adele",
+      "avatar": "https://i.pinimg.com/736x/13/b2/18/13b218257756135657857ce8f43daa58.jpg",
+    }
 ```
 
 **Retornos:**
@@ -50,65 +49,64 @@ A API Fornece rotas de login de usuários, visualização de todos os tweets com
 
 $~$
 
+##### [GET] /tweets?page=1
+
 ```yml
-[GET] /tweets?page=1
+- Rota para buscar todas os tweets
+- Possui paginação
 
-    - Rota para buscar todas os tweets
-    - Possui paginação
-
-    - response:
-        [
-            {
-                username: "bobesponja",
-                avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-                tweet: "eu amo o Patrik"
-            },
-            {
-                username: "batman",
-                avatar: "https://i.pinimg.com/originals/0f/2c/cf/0f2ccffa34f17064ec57234d2d6c8b52.jpg",
-                tweet: "Faça seus medos terem medo de você"
-            },
-            {
-                username: "MulherMaravilha",
-                avatar: "https://i.pinimg.com/736x/e5/a1/05/e5a10519e7cf7658171b7d957874455c.jpg",
-                tweet: "Maior que a tristeza de não ter vencido é a vergonha de não ter lutado"
-            },
-            ...
-        ]
+- response:
+    [
+      {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "eu amo o Patrik",
+      },
+      {
+        username: "batman",
+        avatar: "https://i.pinimg.com/originals/0f/2c/cf/0f2ccffa34f17064ec57234d2d6c8b52.jpg",
+        tweet: "Faça seus medos terem medo de você",
+      },
+      {
+        username: "MulherMaravilha",
+        avatar: "https://i.pinimg.com/736x/e5/a1/05/e5a10519e7cf7658171b7d957874455c.jpg",
+        tweet: "Maior que a tristeza de não ter vencido é a vergonha de não ter lutado",
+      },
+      ...,
+    ]
 ```
 
 **Retornos:**
 
 | Status Code | Situação          |
 | ----------- | ----------------- |
-| 200         | Retorna os twwets |
+| 200         | Retorna os tweets |
 
 $~$
 
+##### [GET] /tweets/:username
+
 ```yml
-GET /tweets/:username
-
-    - Rota para buscar tweets específicos de um usuário
-    - params: 'MulherMavarilha'
-    - response:
-        [
-            {
-                username: "MulherMaravilha",
-                avatar: "https://i.pinimg.com/736x/e5/a1/05/e5a10519e7cf7658171b7d957874455c.jpg",
-                tweet: "Maior que a tristeza de não ter vencido é a vergonha de não ter lutado"
-            },
-            {
-                username: "MulherMaravilha",
-                avatar: "https://i.pinimg.com/736x/e5/a1/05/e5a10519e7cf7658171b7d957874455c.jpg",
-                tweet: "Tenha fé no final essa será sua maior arma"
-            },
-            {
-                username: "MulherMaravilha",
-                avatar: "https://i.pinimg.com/736x/e5/a1/05/e5a10519e7cf7658171b7d957874455c.jpg",
-                tweet: "Você é mais forte do que pensa"
-            },
-        ]
-
+- Rota para buscar tweets específicos de um usuário
+- params: "MulherMavarilha"
+- response:
+    [
+      {
+        username: "MulherMaravilha",
+        avatar: "https://i.pinimg.com/736x/e5/a1/05/e5a10519e7cf7658171b7d957874455c.jpg",
+        tweet: "Maior que a tristeza de não ter vencido é a vergonha de não ter lutado",
+      },
+      {
+        username: "MulherMaravilha",
+        avatar: "https://i.pinimg.com/736x/e5/a1/05/e5a10519e7cf7658171b7d957874455c.jpg",
+        tweet: "Tenha fé no final essa será sua maior arma",
+      },
+      {
+        username: "MulherMaravilha",
+        avatar: "https://i.pinimg.com/736x/e5/a1/05/e5a10519e7cf7658171b7d957874455c.jpg",
+        tweet: "Você é mais forte do que pensa",
+      },
+    ]
 ```
 
 **Retornos:**
@@ -143,7 +141,7 @@ Execute o seguinte comando para instalar as dependências.
     npm install
 ```
 
-Criar um arquivo **.env**
+Criar um arquivo **.env** na raíz do projeto com o seguinte dado:
 
 #### env
 
@@ -173,9 +171,9 @@ A aplicação estará disponível em: <http://localhost:5000> no seu navegador.
 
 Gabriela Tiago de Araújo
 
-email: gabrielatiagodearaujo@outlook.com
-linkedin: <https://www.linkedin.com/in/gabrielatiago/>
-portfolio: <https://gabrielatiago.vercel.app>
+- email: gabrielatiagodearaujo@outlook.com
+- linkedin: <https://www.linkedin.com/in/gabrielatiago/>
+- portfolio: <https://gabrielatiago.vercel.app>
 
 ---
 
