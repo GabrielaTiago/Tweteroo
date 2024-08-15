@@ -2,27 +2,25 @@
 
 # <p align = "center">Tweteroo</p>
 
-## <p align = "center">API Tweteroo</p>
+### <p align = "center">API Tweteroo</p>
 
 <div align = "center">
-   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" height="30px"/>
-   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" heigth="30px"/>
-   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" heigth="30px"/>
-   <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" heigth="30px">
-   <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" heigth="30px"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" height="30px"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" heigth="30px"/>
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" heigth="30px"/>
+  <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" heigth="30px">
+  <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" heigth="30px"/>
 </div>
 
-$~$
-
-### :clipboard: Descrição
+## :clipboard: Descrição
 
 Este é um projeto de uma API baseada em algumas funcionalidades da rede social Twitter. Construído com as tecnologias JavaScript, Nodejs, Express.
 
 A API Fornece rotas de login de usuários, visualização de todos os tweets com paginação, visualização de tweets de um usuário em específico e criação de novos tweets.
 
-### :world_map: Rotas
+## :world_map: Rotas
 
-##### [POST] /sign-up
+#### [POST] /sign-up
 
 ```yml
 - Rota para login de um novo usário
@@ -40,7 +38,7 @@ A API Fornece rotas de login de usuários, visualização de todos os tweets com
 **Retornos:**
 
 | Status Code | Situação                   |
-| ----------- | -------------------------- |
+| :---------: | -------------------------- |
 | 201         | Usuário logado com sucesso |
 | 409         | Uuário já logado           |
 | 422         | Nenhum 'body' enviado      |
@@ -49,7 +47,7 @@ A API Fornece rotas de login de usuários, visualização de todos os tweets com
 
 $~$
 
-##### [GET] /tweets?page=1
+#### [GET] /tweets?page=1
 
 ```yml
 - Rota para buscar todas os tweets
@@ -79,12 +77,12 @@ $~$
 **Retornos:**
 
 | Status Code | Situação          |
-| ----------- | ----------------- |
+| :---------: | ----------------- |
 | 200         | Retorna os tweets |
 
 $~$
 
-##### [GET] /tweets/:username
+#### [GET] /tweets/:username
 
 ```yml
 - Rota para buscar tweets específicos de um usuário
@@ -112,12 +110,12 @@ $~$
 **Retornos:**
 
 | Status Code | Situação                     |
-| ----------- | ---------------------------- |
+| :---------: | ---------------------------- |
 | 200         | Retorna os tweets do usuário |
 
----
+$~$
 
-### :rocket: Rodando esse projeto localmente
+## :rocket: Rodando esse projeto localmente
 
 Para inicializar esse projeto é necessário que você possua a última versão estável do [Node.js](https://nodejs.org/en/download) e [npm](https://www.npmjs.com/) rodando localmente.
 
@@ -157,24 +155,24 @@ Para iniciar o servidor, execute o comando:
 
 A aplicação estará disponível em: <http://localhost:5000> no seu navegador.
 
----
-
-### :bulb: Reconhecimentos
+## :bulb: Reconhecimentos
 
 - [Badges para Github](https://github.com/alexandresanlim/Badges4-README.md-Profile#-database-)
 - [Inspiração de README](https://gist.github.com/luanalessa/7f98467a5ed62d00dcbde67d4556a1e4#file-readme-md)
 - [Driven Education](https://www.driven.com.br)
 
----
+## :muscle: Contribuição
 
-### 👩‍🦱 Autora
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhoria, abra uma _issue_ ou envie um _pull request_.
+
+## :woman_technologist: Autora
 
 Gabriela Tiago de Araújo
 
-- email: gabrielatiagodearaujo@outlook.com
+- email: <gabrielatiagodearaujo@outlook.com>
 - linkedin: <https://www.linkedin.com/in/gabrielatiago/>
 - portfolio: <https://gabrielatiago.vercel.app>
 
----
+$~$
 
 [🔝 Back to top](#api-tweteroo)
